@@ -1,11 +1,45 @@
 # Product Website Workflow
 
-A reusable Codex skill for building and refining product websites and campaign landing pages across product categories.
+面向 Codex 的通用产品网站设计与迭代 Skill，适用于不同品类的消费产品、硬件、软件和众筹项目。它不是一套固定模板：页面章节、叙事方式和视觉语言会根据产品、受众、现有素材与目标重新组织。
 
-It guides project discovery, story and page structure, visual direction, responsive layouts, cinematic or scroll-driven interactions, media behavior, conversion flows, accessibility, preview, and publishing—while keeping product claims grounded in confirmed facts.
+## 一句话安装
 
-## Install
+在 Codex 中复制发送下面这句话。它会调用内置安装器，从公开仓库根目录安装这个 Skill：
 
-Install this repository as a Codex skill in a folder named `product-website-workflow`, then invoke it with `$product-website-workflow` when working on a product site.
+```text
+请用 $skill-installer 安装 GitHub Skill：仓库 onlychuan/product-website-workflow，路径为仓库根目录（.），安装名称 product-website-workflow。
+```
 
-The repository contains workflow guidance only. It does not include a particular website's source, customer data, media, credentials, or product engineering files.
+安装完成后，在新的对话中用 `$product-website-workflow` 调用。Skill 使用 Codex 支持的 `SKILL.md` 目录格式；它可独立工作，不要求额外连接服务。官方的 Skill 格式和创建说明见 [OpenAI Developers 文档](https://developers.openai.com/plugins/build/skills)。
+
+## 能帮助做出什么样的网站
+
+目标不是把内容堆成一页普通的长图，而是让产品故事、视觉和交互连成一个完整体验。根据项目需要，可以设计成例如：
+
+1. **沉浸式 Hero**：用主视觉、短片或产品特写建立第一印象；标题与关键操作保持清楚，不让动效压过信息。
+2. **需求与情境**：说明用户遇到的真实问题、使用场景或尚未被满足的需求，不制造未经证实的恐惧或夸张承诺。
+3. **产品机制**：通过结构动画、交互示意、过程演示或简明的视觉对比解释产品如何工作。
+4. **功能证明**：将关键步骤、状态变化或前后结果和对应文案准确同步，让访客看得懂“它做了什么”。
+5. **日常使用与价值**：把产品放回真实生活或工作场景，呈现体验、便利性和经确认的差异化优势。
+6. **转化收尾**：把订阅、预约、购买、众筹提醒或其他 CTA 自然融入最终页面，而不是突兀叠加一个遮挡内容的浮窗。
+
+这只是可选叙事路径，不要求每个项目都使用六个章节。适合时，页面可以采用固定视口中的电影式舞台：滚轮或触摸推进同一场景的时间线，画面、光线、文字和视频随进度变化；故事完成后，再平滑释放为正常页面滚动。也可以采用常规页面流、产品配置器或其他更合适的体验。
+
+理想的视觉节奏是“先吸引注意，再解释，再证明，最后邀请行动”：开场让主视觉占据主导；进入机制说明时，用镜头、遮罩、尺度、光线或场景色温完成转场；演示阶段让每个关键状态有足够停留时间；生活场景重新变得温暖、开阔；最后让报名/购买操作成为收尾构图的一部分。具体效果按产品调整，不套用某个产品的文案、颜色、功能或隐私主张。
+
+## 设计与交互范围
+
+- **视觉方向**：从品牌规范、产品材质、受众与现有素材出发，建立一致的字体、色彩、留白和影像语言；可偏编辑式、电影感、极简、生活方式或其他合适风格。
+- **动效与视频**：支持滚动时间线、章节切换、产品展示、交互图标、页面转场和 CTA 融合。动效需可读、可控、可退出，并照顾键盘、触摸和减少动态效果设置。
+- **桌面与移动端**：分别检查断点、标题换行、表单布局、固定元素遮挡与视频行为；按用户要求保留已认可的平台差异，不把桌面规则硬套到手机。
+- **转化流程**：梳理表单聚焦、错误、成功和后续选择等状态；浮动输入栏进入最终 CTA 时调整整体布局，避免内容互相遮盖。
+- **素材与文案**：区分概念占位图和正式素材；在需要时准备网页压缩版本。文字叠加在网页中，不把字幕或品牌字样烙进原始视频，除非项目明确要求。
+- **真实性与安全**：产品功能、规格、隐私、认证和性能数据只使用已确认的信息；预览页面不会假装已保存邮件、收款或完成第三方订阅。
+
+## 工作方式
+
+先检查现有页面、代码、素材和已确认的设计方向，再围绕用户反馈做小范围、可预览的迭代。修改后检查目标设备上的静态布局、动效过程与结束状态；用户要求本地预览时不发布，要求上线时沿用项目现有托管和访问权限。
+
+## 仓库内容
+
+仓库只包含可复用的工作流程说明，不包含特定网站源代码、品牌素材、客户数据、凭证或产品工程文件。
