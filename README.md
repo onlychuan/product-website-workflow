@@ -1,9 +1,11 @@
-# MiaoLab Website Workflow
+# Product Website Workflow
 
-A Codex skill for building and iterating on the MiaoLab Safety Outlet product site: cinematic chapters, responsive behavior, the launch signup, and versioned publishing.
+A reusable Codex skill for building and refining product websites and campaign landing pages across product categories.
+
+It guides project discovery, story and page structure, visual direction, responsive layouts, cinematic or scroll-driven interactions, media behavior, conversion flows, accessibility, preview, and publishing—while keeping product claims grounded in confirmed facts.
 
 ## Install
 
-Install this repository as a Codex skill, or copy `SKILL.md` into a skill folder named `miaolab-website-workflow` under your Codex skills directory. Start a matching task with `$miaolab-website-workflow`.
+Install this repository as a Codex skill in a folder named `product-website-workflow`, then invoke it with `$product-website-workflow` when working on a product site.
 
-The workflow is tailored to the MiaoLab site. It does not include website source, media, credentials, or product engineering files.
+The repository contains workflow guidance only. It does not include a particular website's source, customer data, media, credentials, or product engineering files.

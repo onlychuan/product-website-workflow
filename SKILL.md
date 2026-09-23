@@ -1,62 +1,45 @@
 ---
-name: miaolab-website-workflow
-description: Build, review, and iteratively refine the MiaoLab Safety Outlet product website and Kickstarter story. Use when the user asks to change this site's sections, cinematic video flow, mobile behavior, launch signup, assets, preview, or publishing.
+name: product-website-workflow
+description: Build, review, and iteratively refine product websites and campaign landing pages. Use when shaping site structure, storytelling, motion, responsive behavior, signup flows, assets, previews, or publishing for a product.
 ---
 
-# MiaoLab Website Workflow
+# Product Website Workflow
 
-Use this workflow for the existing MiaoLab product website. Preserve the approved visual direction and the user's latest choices while making focused, reviewable changes.
+Use this workflow for websites and campaign pages across product categories. Adapt the story, visual language, proof, and interaction to the specific product, audience, and business goal; never assume a fixed product type or chapter map.
 
-## Start from the current site
+## Understand the project
 
-- Inspect the current source, existing project instructions, recent version notes, and relevant page styles/scripts before editing. Treat synced `sources/` as read-only. Preserve user changes and leave unrelated routes and assets alone.
-- Identify the exact area the user wants changed. A request such as “show me how it looks” means implement the requested preview and hand it to the user, not just describe a proposal.
-- When the user gives a correction during work, treat it as steering: incorporate it into the same change. For example, “mobile does not need changes” means scope CSS and behavior to desktop and verify mobile declarations remain untouched.
-- Ask only for missing product facts or decisions that would materially change the design. Keep confirmed product claims accurate; never invent performance numbers, certifications, components, or privacy properties.
-- Explain the planned change briefly in Chinese before a meaningful edit. Keep progress updates short.
+- Inspect the current source, project instructions, recent approved versions, and the relevant styles, scripts, and assets before editing. Treat synced or explicitly read-only sources as reference material.
+- Identify the exact page, breakpoint, state, or interaction the user wants changed. Treat corrections during work as scope-setting; for example, “desktop only” means leave mobile behavior unchanged.
+- Preserve the latest approved direction and user decisions. Ask only for missing facts or choices that materially affect the result; otherwise make a reversible, clearly scoped assumption and say what it is.
+- Keep product claims grounded in user-provided or verified facts. Never invent capabilities, performance figures, certifications, privacy properties, materials, or compatibility.
+- Before a meaningful edit, briefly state the intended change in the user's language. Keep progress updates concise.
 
-## Preserve MiaoLab's design and story
+## Shape the story and visual system
 
-The current direction is editorial product film with industrial minimalism: deliberate typography, quiet product imagery, and restrained motion. Avoid generic cards, dashboard/PPT layouts, abrupt section transitions, excess decoration, and copy that competes with the product. Use the existing brand colors and components.
+- Choose a page structure that serves the product and campaign. A useful pattern may include a hero, problem or context, solution, demonstration, lifestyle or use cases, differentiators, and a conversion close—but use only the parts that fit.
+- Use the product's established brand system when available. Otherwise define a coherent visual direction from the brief and existing assets; do not impose a preset palette or style.
+- Favor clear hierarchy, deliberate typography, legible copy, and product-relevant imagery. Avoid generic card grids, dashboard/PPT treatments, abrupt section boundaries, and decorative motion that competes with the message unless the user explicitly wants them.
+- Make transitions feel intentional. If scroll or touch controls a pinned cinematic stage, keep the stage visually fixed while its timeline advances, then release into normal page flow at the agreed point. Do not impose this interaction on every site.
+- Keep motion responsive to keyboard and touch as well as pointer input. Respect reduced-motion preferences, maintain readable timing, and avoid scroll trapping.
 
-The page's current chapter map is:
+## Responsive behavior and media
 
-1. Hero / home scene
-2. Question / risk context
-3. Technology / exploded product view
-4. Proof / functional demonstration
-5. Lifestyle / release into ordinary page flow
-6. Experience & Privacy
-7. Kickstarter call to action
+- Check the target desktop and mobile layouts for overlap, clipped controls, unreadable text, and viewport-specific behavior. Preserve any explicitly approved breakpoint decisions.
+- For autoplay video, use muted inline playback where appropriate and account for browser restrictions. A failed `play()` must not silently advance a story or leave an empty stage; pause timeline-dependent copy while media buffers and provide a clear fallback when needed.
+- Keep captions and visual claims synchronized with the corresponding media moment. Test chapter entry, playback start, buffering, exit, and repeat behavior at relevant viewport sizes.
+- Distinguish concept/demo assets from approved production assets. Preserve supplied originals; prepare web-optimized derivatives when needed and retain source media according to the user's delivery preference.
+- Do not imply a demo form stores an email, takes payment, or registers for a third-party service unless the integration is actually connected.
 
-Preserve the architecture and copy of the latest approved version unless the user requests a change. The cinematic opening has used one pinned full-screen stage for chapters 01–04; scroll or touch advances its timeline, then the page releases into normal flow around 05. If changing this behavior, keep the transitions continuous and ensure the interaction still works with keyboard, touch, and reduced-motion settings.
+## Conversion and interaction
 
-Use the current approved responsive decisions as project-specific preferences, not universal design laws: the desktop finale is a vertical centered composition with product film and heading above the signup; mobile layout has been explicitly kept unchanged. Reconfirm scope from the latest user message before adjusting either.
-
-## Product video behavior
-
-- For mobile playback, use muted inline video where appropriate and account for Safari and Chrome autoplay restrictions. A failed `play()` must not silently advance the story or leave a blank stage.
-- Start the exploded view when its chapter becomes active, keep timeline copy tied to the actual video position, and pause progression while buffering. Provide a visible, accessible retry/play affordance if the browser blocks playback.
-- Distinguish a tap from a real swipe before handing control to a scroll-driven scrubber. Keep a clear explore cue in an unobstructed position.
-- Check video behavior at the relevant viewport and chapter boundary. Do not claim real-device coverage unless the user or an available device actually verified it.
-
-## Floating launch signup and finale
-
-The launch email capsule can expand when focused and merge into the final Kickstarter CTA. Keep the transition as one composition: reserve room for headings, let the final form and VIP states participate in page layout, and animate layout changes without covering text or footer content. Check both the moving state and the settled state, including capture, VIP choice, skipped reminder, and completion. At narrow widths, verify the user's approved mobile behavior rather than inheriting desktop-only adjustments.
-
-The current signup may be a preview only. Keep its status truthful: do not imply an email was saved, a payment was taken, or a Kickstarter notification was registered unless those services are actually connected. Add legal/privacy copy or a new data destination only when needed and authorized for that implementation.
-
-## Assets and product claims
-
-- Distinguish concept/demo images from approved product renders, photography, and footage. Do not present a placeholder as a final or technically accurate product depiction.
-- Preserve supplied originals; when preparing production assets, keep both the original media and a web-optimized copy. Do not request engineering project files when the user's established delivery preference is source footage plus web-compressed media.
-- Keep the proof sequence legible: approach, detect, unused outlet off, lamp on. Do not imply that normal connected devices lose power if the product only disconnects an unused outlet.
-- Privacy statements for this product (no camera, no microphone, no internet connection, with sensing and decisions on-device) were explicitly confirmed by the user. Preserve them accurately, and do not extend them into broader unverified guarantees.
+- Make forms, floating prompts, and CTA transitions part of the page's composition. When a floating signup merges into a final CTA, reserve layout space for it, animate the layout change deliberately, and verify both the transition and settled state so text or footer content is not covered.
+- Make form states clear: idle, focused, invalid, submitting, success, and any next-step choice. Explain where data goes and do not collect or transmit real data in a preview unless the user authorized and the implementation supports it.
+- Keep the interaction accessible: semantic labels, visible focus, keyboard operation, sufficient contrast, and reduced-motion handling.
 
 ## Review, preview, and handoff
 
-- After the smallest scoped change, check the relevant desktop and mobile view, text legibility, clipping/overlap, and any altered interaction. Inspect the ending state of animations as well as the in-between frame.
-- Respect explicit preview scope. If the user requests local-only review, do not publish. Otherwise use the project's existing Sites hosting setup and preserve its current audience; do not widen access. Reuse the established site and avoid creating duplicates.
-- When publishing is requested or is the project's established workflow, use the Sites publishing process for the exact edited source, then open the updated preview so the user can inspect it.
-- The user has an established MiaoLab GitHub workflow with Chinese version notes. When updating that repository as part of the requested work, add a concise user-visible change entry and keep the version record/tag aligned with the saved Site version. Do not apply this convention to unrelated repositories or push unrelated files.
-- Finish with the preview link or artifact, a compact statement of what changed, and any meaningful limitation (for example, a demo form that does not store email). Do not call an attempted or pending deployment complete.
+- Verify the changed behavior in the actual page at relevant breakpoints. Inspect animation mid-state and end-state as well as text legibility, spacing, and overlap.
+- Respect the requested preview scope. If the user asks for local-only review, do not publish. When publishing is requested or is an established part of the project workflow, use the existing host and preserve its audience and access settings.
+- When updating a versioned repository as part of the request, add a concise user-facing change note and keep the version record aligned with the saved preview where that convention exists. Do not apply repository-specific conventions to unrelated projects.
+- Finish with the preview or artifact link, a compact change summary, and any meaningful limitation.
